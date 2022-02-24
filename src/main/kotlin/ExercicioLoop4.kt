@@ -2,7 +2,7 @@ fun main(){
     var cont = 1
     var idade: Int
     var genero: Int
-    var comp: Int
+    var comp: Int = 0
     var mCalm = 0
     var mNerv = 0
     var mAgre = 0
@@ -18,8 +18,8 @@ fun main(){
     var menos18Calm = 0
     var mais40Nerv = 0
 
-    while(cont<=4){
-        println("Pessoa $cont")
+    while(cont<=150){
+        println("\nPessoa $cont")
         cont++
         print("Digite a sua idade: ")
         idade = readLine()!!.toInt()
@@ -39,7 +39,7 @@ fun main(){
             1 -> {
                 print("\nDado os seguintes comportamentos: " +
                         "\n1. Calma\n2. Nervosa\n3. Agressiva")
-                print("Qual o seu comportamento: ")
+                print("\nQual o seu comportamento: ")
                 comp = readLine()!!.toInt()
 
                 when(comp){
@@ -51,9 +51,9 @@ fun main(){
                 }
             }
             2 -> {
-                print("Dado os seguintes comportamentos: " +
+                print("\nDado os seguintes comportamentos: " +
                         "\n1. Calmo\n2. Nervoso\n3. Agressivo")
-                print("Qual o seu comportamento: ")
+                print("\nQual o seu comportamento: ")
                 comp = readLine()!!.toInt()
 
                 when(comp){
@@ -65,9 +65,9 @@ fun main(){
                 }
             }
             3 -> {
-                print("Dado os seguintes comportamentos: " +
+                print("\nDado os seguintes comportamentos: " +
                         "\n1. Calme\n2. Nervose\n3. Agressive")
-                print("Qual o seu comportamento: ")
+                print("\nQual o seu comportamento: ")
                 comp = readLine()!!.toInt()
 
                 when(comp){
@@ -79,13 +79,23 @@ fun main(){
                 }
             }
        }
-    if(idade in 0..18){
+    if(idade in 0..18 && comp == 1){
+        menos18Calm++
 
 
+    }else if(idade>=40 && comp==2){
+        mais40Nerv++
     }
 
 
     }
+    calmTotal = fCalm + mCalm + oCalm
+    println("\nHá um total de $calmTotal pessoas calmas. São $fNerv o número de mulheres nervosas, " +
+            "são $mAgre a quantidade de homens agressivo. " +
+            "E outros gêneros, representam" +
+            " $oCalm pessoas calmas.\nO número total de pessoas com menos de 18 anos " +
+            "e calmas são $menos18Calm " +
+            "e as pessoas com mais de 40 anos nervosas são $mais40Nerv.")
 
 
 }
